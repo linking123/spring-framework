@@ -20,7 +20,7 @@ import org.springframework.lang.Nullable;
 
 /**
  * Interface to be implemented by objects used within a {@link BeanFactory} which
- * are themselves factories for individual objects. If a bean implements this
+ * are themselves factories for individual(独特的) objects. If a bean implements this
  * interface, it is used as a factory for an object to expose, not directly as a
  * bean instance that will be exposed itself.
  *
@@ -63,6 +63,7 @@ import org.springframework.lang.Nullable;
  * @see org.springframework.jndi.JndiObjectFactoryBean
  */
 public interface FactoryBean<T> {
+	// 生产复杂的独特的对象的工厂
 
 	/**
 	 * The name of an attribute that can be

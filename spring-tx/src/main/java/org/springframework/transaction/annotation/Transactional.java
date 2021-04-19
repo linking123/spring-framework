@@ -53,7 +53,7 @@ import org.springframework.transaction.TransactionDefinition;
  *
  * <p>Alternatively, this annotation may demarcate a reactive transaction managed
  * by {@link org.springframework.transaction.ReactiveTransactionManager} which
- * uses the Reactor context instead of thread-local attributes. As a consequence,
+ * uses the Reactor context instead of thread-local(linking) attributes. As a consequence,
  * all participating data access operations need to execute within the same
  * Reactor context in the same reactive pipeline.
  *

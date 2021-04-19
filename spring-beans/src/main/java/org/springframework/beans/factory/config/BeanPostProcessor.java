@@ -56,6 +56,7 @@ import org.springframework.lang.Nullable;
  * @see BeanFactoryPostProcessor
  */
 public interface BeanPostProcessor {
+    // 后置处理器 增强器
 
 	/**
 	 * Apply this {@code BeanPostProcessor} to the given new bean instance <i>before</i> any bean

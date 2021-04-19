@@ -64,28 +64,29 @@ import org.springframework.lang.Nullable;
  * the immediate parent factory will be asked. Beans in this factory instance
  * are supposed to override beans of the same name in any parent factory.
  *
- * <p>Bean factory implementations should support the standard bean lifecycle interfaces
+ * <p>Bean factory implementations should support the standard bean lifecycle(标准bean的生命周期) interfaces
  * as far as possible. The full set of initialization methods and their standard order is:
+ * 共14步
  * <ol>
- * <li>BeanNameAware's {@code setBeanName}
- * <li>BeanClassLoaderAware's {@code setBeanClassLoader}
- * <li>BeanFactoryAware's {@code setBeanFactory}
- * <li>EnvironmentAware's {@code setEnvironment}
- * <li>EmbeddedValueResolverAware's {@code setEmbeddedValueResolver}
- * <li>ResourceLoaderAware's {@code setResourceLoader}
+ * 1<li>BeanNameAware's {@code setBeanName}
+ * 2<li>BeanClassLoaderAware's {@code setBeanClassLoader}
+ * 3<li>BeanFactoryAware's {@code setBeanFactory}
+ * 4<li>EnvironmentAware's {@code setEnvironment}
+ * 5<li>EmbeddedValueResolverAware's {@code setEmbeddedValueResolver}
+ * 6<li>ResourceLoaderAware's {@code setResourceLoader}
  * (only applicable when running in an application context)
- * <li>ApplicationEventPublisherAware's {@code setApplicationEventPublisher}
+ * 7<li>ApplicationEventPublisherAware's {@code setApplicationEventPublisher}
  * (only applicable when running in an application context)
- * <li>MessageSourceAware's {@code setMessageSource}
+ * 8<li>MessageSourceAware's {@code setMessageSource}
  * (only applicable when running in an application context)
- * <li>ApplicationContextAware's {@code setApplicationContext}
+ * 9<li>ApplicationContextAware's {@code setApplicationContext}
  * (only applicable when running in an application context)
- * <li>ServletContextAware's {@code setServletContext}
+ * 10<li>ServletContextAware's {@code setServletContext}
  * (only applicable when running in a web application context)
- * <li>{@code postProcessBeforeInitialization} methods of BeanPostProcessors
- * <li>InitializingBean's {@code afterPropertiesSet}
- * <li>a custom init-method definition
- * <li>{@code postProcessAfterInitialization} methods of BeanPostProcessors
+ * 11<li>{@code postProcessBeforeInitialization} methods of BeanPostProcessors  # before
+ * 12<li>InitializingBean's {@code afterPropertiesSet}
+ * 13<li>a custom init-method definition
+ * 14<li>{@code postProcessAfterInitialization} methods of BeanPostProcessors   # after
  * </ol>
  *
  * <p>On shutdown of a bean factory, the following lifecycle methods apply:

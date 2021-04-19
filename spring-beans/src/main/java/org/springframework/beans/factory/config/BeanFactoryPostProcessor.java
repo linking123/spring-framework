@@ -61,6 +61,7 @@ import org.springframework.beans.BeansException;
  */
 @FunctionalInterface
 public interface BeanFactoryPostProcessor {
+	// 增强器 扩展
 
 	/**
 	 * Modify the application context's internal bean factory after its standard
